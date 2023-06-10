@@ -28,7 +28,7 @@ $sql = "INSERT INTO clientes (nome,senha,email) VALUES ('$nome', '$senha', '$ema
 if ($conn->query($sql)===TRUE){
     $erro = "Seu cadastro foi feito com sucesso";
     header("Location: ../cadastro.php?erro=" . urlencode($erro));
-    // echo "<script>alert('$sucess'); window.location.href='../login.php'</script>";
+    // echo "<script>alert('$erro'); window.location.href='../login.php'</script>";
 } else {
  echo "Erro: " . $sql . "<br>" . $conn->error."<br>";
  }
