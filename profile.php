@@ -1,6 +1,5 @@
-
 <?php
-session_start();
+require_once "PHP/profile_image.php";
 
 if (!isset($_SESSION["id_usuario"])) {
     header("Location: index.php");
@@ -22,6 +21,8 @@ if (isset($_SESSION['ultimo_acesso']) && (time() - $_SESSION['ultimo_acesso'] > 
 $_SESSION['ultimo_acesso'] = time();
 $nome = $_SESSION["nome"];
 $idUsuario = $_SESSION["id_usuario"];
+$caminhoImagem = getProfileImage($idUsuario);
+
 ?>
 
 <!DOCTYPE html>
@@ -171,7 +172,7 @@ $idUsuario = $_SESSION["id_usuario"];
  <h2>Informações do Usuário</h2>
 <div class="profile-container">
   <p class="username"><?php echo "Seja bem-vindo! ".$nome; ?><br></p>
-  <img src="<?php echo $caminho_imagem; ?>" alt="Foto de Perfil" class="profile-picture">
+  <img src="<?php echo $caminhoImagem; ?>" alt="Foto de Perfil" class="profile-picture">
 </div>
 <div>
   <?php
