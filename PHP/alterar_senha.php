@@ -5,10 +5,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $senhaAtual = $_POST["senha_atual"];
     $novaSenha = $_POST["nova_senha"];
 
-    $servername = "sql10.freemysqlhosting.net";
-    $username = "sql10624365";
-    $password = "XMdT1yBz3V";
-    $dbname = "sql10624365";
+    $servername = "";
+    $username = "";
+    $password = "";
+    $dbname = "";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
 
